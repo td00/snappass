@@ -10,7 +10,7 @@ services:
         stop_signal: SIGINT
         environment:
             - REDIS_HOST=redis
-            - NO_SSL=True
+            - HOST_OVERRIDE=secrets.tservic.es
         depends_on:
           - redis
 
