@@ -166,7 +166,7 @@ def handle_password():
 
     if NO_SSL:
         if HOST_OVERRIDE:
-            base_url = f'http://{HOST_OVERRIDE}/'
+            base_url = f'https://{HOST_OVERRIDE}/'
         else:
             base_url = request.url_root
     else:
