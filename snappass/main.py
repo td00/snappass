@@ -164,16 +164,7 @@ def handle_password():
     ttl, password = clean_input()
     token = set_password(password, ttl)
 
-    if NO_SSL:
-        if HOST_OVERRIDE:
-            base_url = f'https://{HOST_OVERRIDE}/'
-        else:
-            base_url = request.url_root
-    else:
-        if HOST_OVERRIDE:
-            base_url = f'https://{HOST_OVERRIDE}/'
-        else:
-            base_url = request.url_root.replace("http://", "https://")
+    base_url = f'https://{HOST_OVERRIDE}/'
     if URL_PREFIX:
         base_url = base_url + URL_PREFIX.strip("/") + "/"
     link = base_url + quote_plus(token)
